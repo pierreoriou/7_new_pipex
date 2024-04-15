@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 16:04:11 by peoriou           #+#    #+#             */
-/*   Updated: 2024/04/15 09:54:41 by poriou           ###   ########.fr       */
+/*   Updated: 2024/04/15 12:44:08 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,11 @@ typedef struct s_args
 }			t_args;
 
 int		main(int argc, char *argv[], char *envp[]);
-pid_t	initiate_fork(t_args args, int pipefd[]);
-// int		initiate_waitpid(pid_t pid, int *wstatus);
-// void	initiate_waitpid(pid_t pid, int *wstatus);
-// void	initiate_waitpid2(int *wstatus);
-void	initiate_pipe(int pipefd[2], t_args args);
 void	close_both_fd(int fd1, int fd2);
 /* INIT */
 void	init_args(t_args *args, int argc, char *argv[]);
+void	init_pipe(int pipefd[2], t_args args);
+pid_t	init_fork(t_args args, int pipefd[]);
 void	init_dup2_cpid1(t_args args, int pipefd, int infile_fd);
 void	init_dup2_cpid2(t_args args, int pipefd, int outfile_fd);
 /* CHILD */
@@ -58,16 +55,3 @@ void	free_args(t_args *args);
 void	free_exit_cpid(t_args args, int pipefd, int fd, int exitcode);
 
 #endif
-
-// void	check_file1_permissions(char *file);
-// void	check_folder_permissions(char *file);
-// void	check_command_isempty(char *cmd);
-// void	check_command_isspace(char *cmd);
-// void	check_filename_isempty(char *file);
-// void	check_filename_isspace(char *file);
-// void	check_filename_characters(char *file, int n);
-// char	*trim_arg(char *arg);
-// void	check_filename_len(char *file);
-// void	check_file1_exists(char *file);
-// void	check_file1_isdir(char *file);
-// void	check_command_executability(t_args *args, char *cmd, char *envp[]);

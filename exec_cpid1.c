@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 07:34:13 by peoriou           #+#    #+#             */
-/*   Updated: 2024/04/12 17:08:58 by poriou           ###   ########.fr       */
+/*   Updated: 2024/04/15 10:58:12 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static void	check_raw_path(t_args args, char *cmd, int pipefd, int fd)
 {
 	if (access(cmd, F_OK) == -1)
 	{
-		// ft_printf(2, "zsh: command not found: %s\n", cmd);
 		ft_printf(2, "zsh: %s: %s\n", strerror(errno), cmd);
 		free_exit_cpid(args, pipefd, fd, 127);
 	}
@@ -90,7 +89,6 @@ void	exec_cpid1(t_args *args, char *envp[], int pipefd[])
 {
 	int	infile_fd;
 
-	// ft_printf(1, "Child 1 executing\n");
 	infile_fd = access_child1_file(args->file1, *args, pipefd);
 	close(pipefd[0]);
 	exec_child1_cmd(infile_fd, *args, envp, pipefd);

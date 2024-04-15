@@ -1,9 +1,9 @@
 NAME = pipex
 
 SRCS =	main2.c \
-		initiate_fork.c \
-		initiate_pipe.c \
 		init/init_args.c \
+		init/init_pipe.c \
+		init/init_fork.c \
 		init/init_dup2.c \
 		exec_cpid1.c \
 		exec_cpid2.c \

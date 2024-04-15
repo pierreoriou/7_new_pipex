@@ -64,6 +64,7 @@ SRC = ft_atoi.c \
       pf_itoa_base.c \
       pf_print_char.c \
       pf_print_colored_str.c \
+	  pf_print_colored_str_utils.c \
       pf_print_hexal.c \
       pf_print_hexau.c \
       pf_print_int.c \

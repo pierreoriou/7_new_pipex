@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:03:30 by poriou            #+#    #+#             */
-/*   Updated: 2024/04/11 11:37:02 by poriou           ###   ########.fr       */
+/*   Updated: 2024/04/15 10:41:54 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ int		pf_unbrlen(long unsigned int n, char *base);
 void	pf_checkcase(t_print *tab, char c);
 void	pf_print_char(t_print *tab);
 void	pf_print_colored_str(t_print *tab);
+char	*pf_color_string(t_print *tab, char *str);
 void	pf_print_int(t_print *tab);
 void	pf_print_hexal(t_print *tab);
 void	pf_print_hexau(t_print *tab);
